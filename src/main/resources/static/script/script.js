@@ -1,9 +1,7 @@
-'use strict';
-
-var singleUploadForm = document.querySelector('#singleUploadForm');
-var singleFileUploadInput = document.querySelector('#singleFileUploadInput');
-var singleFileUploadError = document.querySelector('#singleFileUploadError');
-var singleFileUploadSuccess = document.querySelector('#singleFileUploadSuccess');
+var singleUploadForm = document.getElementById('singleUploadForm');
+var singleFileUploadInput = document.getElementById('singleFileUploadInput');
+var singleFileUploadError = document.getElementById('singleFileUploadError');
+var singleFileUploadSuccess = document.getElementById('singleFileUploadSuccess');
 
 var multipleUploadForm = document.querySelector('#multipleUploadForm');
 var multipleFileUploadInput = document.querySelector('#multipleFileUploadInput');
@@ -15,7 +13,7 @@ function uploadSingleFile(file) {
     formData.append("file", file);
 
     var xhr = new XMLHttpRequest();
-    xhr.open("POST", "/uploadFile");
+    xhr.open("POST", "http://localhost:8080/uploadFile");
 
     xhr.onload = function() {
         console.log(xhr.responseText);
@@ -40,7 +38,7 @@ function uploadMultipleFiles(files) {
     }
 
     var xhr = new XMLHttpRequest();
-    xhr.open("POST", "/uploadMultipleFiles");
+    xhr.open("POST", "http://localhost:8080/uploadMultipleFiles", true);
 
     xhr.onload = function() {
         console.log(xhr.responseText);
