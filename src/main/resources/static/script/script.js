@@ -3,10 +3,10 @@ var singleFileUploadInput = document.getElementById('singleFileUploadInput');
 var singleFileUploadError = document.getElementById('singleFileUploadError');
 var singleFileUploadSuccess = document.getElementById('singleFileUploadSuccess');
 
-var multipleUploadForm = document.querySelector('#multipleUploadForm');
-var multipleFileUploadInput = document.querySelector('#multipleFileUploadInput');
-var multipleFileUploadError = document.querySelector('#multipleFileUploadError');
-var multipleFileUploadSuccess = document.querySelector('#multipleFileUploadSuccess');
+var multipleUploadForm = document.getElementById('multipleUploadForm');
+var multipleFileUploadInput = document.getElementById('multipleFileUploadInput');
+var multipleFileUploadError = document.getElementById('multipleFileUploadError');
+var multipleFileUploadSuccess = document.getElementById('multipleFileUploadSuccess');
 
 function uploadSingleFile(file) {
     var formData = new FormData();
