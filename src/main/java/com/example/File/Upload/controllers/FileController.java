@@ -11,6 +11,7 @@ import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
+import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import javax.servlet.http.HttpServletRequest;
@@ -32,6 +33,13 @@ public class FileController {
 
     @Autowired
     private FileStorageService fileStorageService;
+
+    @RequestMapping("/")
+    public ModelAndView welcome() {
+        ModelAndView modelAndView = new ModelAndView();
+        modelAndView.setViewName("index.html");
+        return modelAndView;
+    }
 
     @CrossOrigin
     @PostMapping("/uploadFile")
