@@ -24,8 +24,7 @@ import java.util.stream.Collectors;
 public class FileController {
 
     @GetMapping("/hello")
-    String hello()
-    {
+    String hello() {
         return "Hello!";
     }
 
@@ -41,7 +40,6 @@ public class FileController {
         return modelAndView;
     }
 
-    @CrossOrigin
     @PostMapping("/uploadFile")
     public UploadFileResponse uploadFile(@RequestParam("file") MultipartFile file) {
         String fileName = fileStorageService.storeFile(file);
@@ -55,7 +53,6 @@ public class FileController {
                 file.getContentType(), file.getSize());
     }
 
-    @CrossOrigin
     @PostMapping("/uploadMultipleFiles")
     public List<UploadFileResponse> uploadMultipleFiles(@RequestParam("files") MultipartFile[] files) {
         return Arrays.asList(files)
@@ -78,7 +75,7 @@ public class FileController {
         }
 
         // Fallback to the default content type if type could not be determined
-        if(contentType == null) {
+        if (contentType == null) {
             contentType = "application/octet-stream";
         }
 
